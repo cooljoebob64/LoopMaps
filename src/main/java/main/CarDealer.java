@@ -6,11 +6,11 @@ public class CarDealer {
 
     private final HashMap<String, String> carList = new HashMap<>();
     private final String[] DEFAULT_CARS = {
-            "Civic","Honda",
-            "Viper","Dodge",
-            "Veloster","Hyundai",
-            "Elantra","Hyundai",
-            "Sonata","Hyundai"
+            "Civic", "Honda",
+            "Viper", "Dodge",
+            "Veloster", "Hyundai",
+            "Elantra", "Hyundai",
+            "Sonata", "Hyundai"
     };
     private final Scanner kb = new Scanner(System.in);
 
@@ -32,7 +32,6 @@ public class CarDealer {
     }
 
     private String talkToCustomer() {
-
         System.out.println("Your options:");
         System.out.println("1: Make lookup (by model)");
         System.out.println("2: List models (by make)");
@@ -41,10 +40,7 @@ public class CarDealer {
         System.out.println("5: Clear the list to empty");
         System.out.println("6: Add the default list back");
         System.out.println("Q: Quit");
-
-
         System.out.print("Your choice: ");
-
         return kb.nextLine();
     }
 
@@ -86,17 +82,16 @@ public class CarDealer {
     private void listModels() {
         System.out.println("What make would you like to see our list of?");
         String userMake = kb.nextLine();
-
         List<String> modelList = new ArrayList<>();
-        for (String car:carList.keySet()
-             ) {
-            if (carList.get(car).equalsIgnoreCase(userMake)){
+        for (String car : carList.keySet()
+        ) {
+            if (carList.get(car).equalsIgnoreCase(userMake)) {
                 modelList.add(car);
             }
         }
         System.out.println("Here is a list of all the cars we have on our list from " + userMake + ":");
-        for (String car:modelList
-             ) {
+        for (String car : modelList
+        ) {
             System.out.println("* " + userMake + " " + car);
         }
         System.out.println("Yep, that's all of 'em we've got from " + userMake + "!");
@@ -104,8 +99,8 @@ public class CarDealer {
 
     private void showWholeList() {
         System.out.println("Here's the whole list of cars:");
-        for (String car:carList.keySet()
-             ) {
+        for (String car : carList.keySet()
+        ) {
             System.out.println("* " + carList.get(car) + " " + car);
         }
         System.out.println("That's everything!");
@@ -120,7 +115,7 @@ public class CarDealer {
         String userModel = kb.nextLine();
         System.out.println("Right, so that's the " + userMake + " " + userModel + "...");
         System.out.println("That a real car? Aw shucks who am I kidding, you're from " + userMake + " after all!");
-        addCar(userModel,userMake);
+        addCar(userModel, userMake);
         System.out.println("Alright, it's on the list now! Thanks for the update!");
     }
 
@@ -132,35 +127,34 @@ public class CarDealer {
 
     private void addDefault() {
         System.out.println("Adding the defaults back to the car list...");
-        for (int i = 0; i < DEFAULT_CARS.length; i+=2) {
+        for (int i = 0; i < DEFAULT_CARS.length; i += 2) {
             String car1 = DEFAULT_CARS[i];
-            String car2 = DEFAULT_CARS[i+1];
+            String car2 = DEFAULT_CARS[i + 1];
             System.out.println("Adding the " + car2 + " " + car1 + " to the list...");
             addCar(car1, car2);
         }
         System.out.println("Done!");
     }
 
-    private void addDefaultSilent(){
-        for (int i = 0; i < DEFAULT_CARS.length; i+=2) {
+    private void addDefaultSilent() {
+        for (int i = 0; i < DEFAULT_CARS.length; i += 2) {
             String car1 = DEFAULT_CARS[i];
-            String car2 = DEFAULT_CARS[i+1];
+            String car2 = DEFAULT_CARS[i + 1];
             addCar(car1, car2);
         }
     }
 
     private void addCar(String model, String make) {
-       try{
-           carList.put(model, make);
-       } catch (IllegalArgumentException e){
-           System.out.println("Error adding car to the list: " + e);
-           System.out.println("You tried to add Make: "+ make + ", Model: " + model);
-       }
+        try {
+            carList.put(model, make);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error adding car to the list: " + e);
+            System.out.println("You tried to add Make: " + make + ", Model: " + model);
+        }
     }
 
-    private void pressEnter(){
+    private void pressEnter() {
         System.out.print("Press Enter to continue...");
         kb.nextLine();
     }
-
 }

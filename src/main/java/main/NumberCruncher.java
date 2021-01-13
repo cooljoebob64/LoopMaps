@@ -100,7 +100,7 @@ public class NumberCruncher {
         return builder.toString();
     }
 
-    private void displayCalcs(){
+    private void displayCalcs() {
         System.out.println("--- Our calculations ---");
         System.out.println("Sum of all numbers: " + getSum());
         System.out.println("Product of all numbers: " + getProduct());

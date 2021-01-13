@@ -18,7 +18,7 @@ public class Main {
 
         while (keepGoing) {
             int choice = 0;
-            goodInput=false;
+            goodInput = false;
             while (!goodInput) {
                 System.out.println("Which program would you like to run?");
                 System.out.println("1. Number Cruncher");
@@ -48,20 +48,17 @@ public class Main {
                 case 2 -> launchCarDealer();
                 default -> System.out.println("Something went wrong! No valid option selected! You said: " + userResponse);
             }
-
-
         }
-
         System.out.println("Program complete!");
     }
 
-    private static void launchNumberCruncher(){
+    private static void launchNumberCruncher() {
         System.out.println("Launching Number Cruncher!");
         pressEnter();
         new NumberCruncher();
     }
 
-    private static void launchCarDealer(){
+    private static void launchCarDealer() {
         System.out.println("Launching Car Dealer!");
         pressEnter();
         new CarDealer();
@@ -69,7 +66,7 @@ public class Main {
 //        pressEnter();
     }
 
-    private static void pressEnter(){
+    private static void pressEnter() {
         System.out.print("Press Enter to continue...");
         kb.nextLine();
     }
