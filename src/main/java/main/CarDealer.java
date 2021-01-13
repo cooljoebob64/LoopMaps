@@ -7,7 +7,10 @@ public class CarDealer {
     private final HashMap<String, String> carList = new HashMap<>();
     private final String[] DEFAULT_CARS = {
             "Civic","Honda",
-            "Viper","Dodge"
+            "Viper","Dodge",
+            "Veloster","Hyundai",
+            "Elantra","Hyundai",
+            "Sonata","Hyundai"
     };
     private final Scanner kb = new Scanner(System.in);
 
