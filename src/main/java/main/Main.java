@@ -64,13 +64,13 @@ public class Main {
     private static void launchCarDealer(){
         System.out.println("Launching Car Dealer!");
         pressEnter();
-
-        System.out.println("Car dealer not implemented yet! Check back soon!");
-        pressEnter();
+        new CarDealer();
+//        System.out.println("Car dealer not implemented yet! Check back soon!");
+//        pressEnter();
     }
 
     private static void pressEnter(){
-        System.out.println("Press Enter to continue...");
+        System.out.print("Press Enter to continue...");
         kb.nextLine();
     }
 }
