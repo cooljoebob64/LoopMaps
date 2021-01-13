@@ -64,11 +64,8 @@ public class CarDealer {
             case 6 -> addDefault();
             default -> repeatThat();
         }
-
         return true;
     }
-
-
 
     private void repeatThat() {
         System.out.println("Uh, I didn't get that, could you say again?");
@@ -120,7 +117,7 @@ public class CarDealer {
         String userModel = kb.nextLine();
         System.out.println("Right, so that's the " + userMake + " " + userModel + "...");
         System.out.println("That a real car? Aw shucks who am I kidding, you're from " + userMake + " after all!");
-        addCar(userMake,userModel);
+        addCar(userModel,userMake);
         System.out.println("Alright, it's on the list now! Thanks for the update!");
     }
 
@@ -149,17 +146,13 @@ public class CarDealer {
         }
     }
 
-    private void addCar(String make, String model) {
+    private void addCar(String model, String make) {
        try{
            carList.put(model, make);
        } catch (IllegalArgumentException e){
            System.out.println("Error adding car to the list: " + e);
            System.out.println("You tried to add Make: "+ make + ", Model: " + model);
        }
-    }
-
-    private String getMake(String model) {
-        return carList.get(model);
     }
 
     private void pressEnter(){
